@@ -10,12 +10,24 @@ body {
     border-radius: 10px;
 }
 .header {
-    height: 170px;
+    height: 200px;
     padding: 30px;
     background-color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: right;
+}
+.changeButtons {
+    text-align: left;
+}
+.change {
+    border-radius: 50px;
+    width: 70px;
+    height: 50px;
+    background-color: crimson;
+    border: none;
+    color: white;
+    outline: none;
 }
 .button-box {
     height: auto;

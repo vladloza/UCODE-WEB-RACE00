@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <meta name="description" content="t00. Secret lab">
+    <link rel="stylesheet" href="css/len-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="header">
+            <div class="changeButtons">
+                <button class="change" onclick="document.location='index.html'">basic</button>
+                <button class="change" onclick="document.location='weight-calc.html'">weight</button>
+                <button class="change" onclick="document.location='area-calc.html'">area</button>
+            </div>
+            <div class="choose">
+                <select>
+                    <option>c</option>
+                    <option>m</option>
+                    <option>km</option>
+                </select>
+                <input class="text-view" type="text" value="0.00" readonly>
+            </div>
+            <div class="choose">
+                <select>
+                    <option>c</option>
+                    <option>m</option>
+                    <option>km</option>
+                </select>
+                <input class="text-view" type="text" value="0.00" readonly>
+            </div>
+        </div>
+        <div class="button-box">
+            <table>
+            <tr>
+                <td><button class="buttons" id="seven" onclick="insert('7')">7</button></td>
+            <td><button class="buttons" id="eigth" onclick="insert('8')">8</button></td>
+            <td><button class="buttons" id="nine" onclick="insert('9')">9</button></td>
+        </tr>
+            <button class="buttons" id="four" onclick="insert('4')">4</button>
+            <button class="buttons" id="five" onclick="insert('5')">5</button>
+            <button class="buttons" id="six" onclick="insert('6')">6</button>
+            <button class="buttons" id="one" onclick="insert('1')">1</button>
+            <button class="buttons" id="two" onclick="insert('2')">2</button>
+            <button class="buttons" id="three" onclick="insert('3')">3</button>
+            <button id="zero" class="buttons" onclick="insert('0')">0</button>
+            <button class="buttons" id="dot" onclick="insert('.')">.</button>
+            <button class="buttons-big" id="answer" onclick="answer()">=</button>
+            <button class="buttons" id="clear" onclick="clean()">C</button>
+        </table>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
