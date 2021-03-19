@@ -11,29 +11,29 @@
 <body>
     <div class="calculator">
         <div class="header">
-            <input id="history" type="text" placeholder="0.00" readonly>
-            <input id="result" type="text" placeholder="0.00" readonly>
+            <input class="history"  type="text" value="0.00" readonly>
+            <input class="result" type="text" value="0.00" readonly>
         </div>
         <div class="button-box">
-            <button onclick="input('')" class="buttons">C</button>
-            <button class="buttons">+/-</button>
-            <button onclick="input('%')" class="buttons">%</button>
-            <button onclick="input('/')" class="buttons">÷</button>
-            <button onclick="input('7')" class="buttons">7</button>
-            <button onclick="input('8')" class="buttons">8</button>
-            <button onclick="input('9')" class="buttons">9</button>
-            <button onclick="input('*')" class="buttons">*</button>
-            <button onclick="input('4')" class="buttons">4</button>
-            <button onclick="input('5')" class="buttons">5</button>
-            <button onclick="input('6')" class="buttons">6</button>
-            <button onclick="input('+')" class="buttons">+</button>
-            <button onclick="input('1')" class="buttons">1</button>
-            <button onclick="input('2')" class="buttons">2</button>
-            <button onclick="input('3')" class="buttons">3</button>
-            <button onclick="input('-')" class="buttons">-</button>
-            <button onclick="input('0')" id="zero" class="buttons">0</button>
-            <button onclick="input('.')" class="buttons">.</button>
-            <button onclick="countResult()" class="buttons-big">=</button>
+            <button class="buttons" id="clear" onclick="clean()">C</button>
+            <button class="buttons" id="plus_and_minus" onclick="plus_and_min()">+/-</button>
+            <button class="buttons" id="percent" onclick="percent()">%</button>
+            <button class="buttons" id="div" onclick="operation('÷')">÷</button>
+            <button class="buttons" id="seven" onclick="insert('7')">7</button>
+            <button class="buttons" id="eigth" onclick="insert('8')">8</button>
+            <button class="buttons" id="nine" onclick="insert('9')">9</button>
+            <button class="buttons" id="mul" onclick="operation('*')">*</button>
+            <button class="buttons" id="four" onclick="insert('4')">4</button>
+            <button class="buttons" id="five" onclick="insert('5')">5</button>
+            <button class="buttons" id="six" onclick="insert('6')">6</button>
+            <button class="buttons" id="plus" onclick="operation('+')">+</button>
+            <button class="buttons" id="one" onclick="insert('1')">1</button>
+            <button class="buttons" id="two" onclick="insert('2')">2</button>
+            <button class="buttons" id="three" onclick="insert('3')">3</button>
+            <button class="buttons" id="minus" onclick="operation('-')">-</button>
+            <button id="zero" class="buttons" onclick="insert('0')">0</button>
+            <button class="buttons" id="dot" onclick="insert('.')">.</button>
+            <button class="buttons-big" id="answer" onclick="answer()">=</button>
 
         </div>
     </div>
