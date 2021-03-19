@@ -4,59 +4,61 @@ body {
 }
 .calculator {
     margin: 100px auto;
-    width: 400px;
-    height: 660px;
+    width: 510px;
+    height: auto;
     box-shadow: 0 15px 28px rgba(0, 0, 0, 75);
     border-radius: 10px;
 }
 .header {
-    height: 150px;
+    height: 170px;
     padding: 30px;
     background-color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: right;
 }
-#history, #result {
+.button-box {
+    height: auto;
+}
+.history, .result {
     width: 100%;
     border: none;
     outline: none;
     text-align: right;
     background: transparent;
 }
-#history {
+.history {
     color: gray;
     height: 30px;
     font-size: 25px;
 }
-#result {
+.result {
     padding-top: 30px;
     font-size: 70px;
 }
 .button-box {
     display: table;
+    background-color: #63a4ff;
 }
 .buttons, .buttons-big {
-    height: 90px;
+    height: 91px;
     border: none;
     outline: none;
 }
 .buttons {
-    width: 100px;
+    width: 102px;
     background-color: #63a4ff;
     font-size: 25px;
 }
-#zero {
-    border-bottom-left-radius: 10px;
-}
 .buttons-big {
-    position: absolute;
-    width: 200px;
+    width: 306px;
+    height: 98px;
     background-color:rgb(35, 161, 109);
     color: white;
-    border-bottom-right-radius: 10px;
-    font-size: 30px;
 }
 .buttons:hover, .buttons-big:hover {
     filter: brightness(70%);
+}
+.bigger {
+    width: 170px;
 }
