@@ -1,3 +1,4 @@
+const KEY_VALUE = "KEY_VALUE"
 let $history = document.getElementsByClassName("history")[0];
 let $result = document.getElementsByClassName("result")[0];
 
@@ -55,3 +56,17 @@ function answer() {
 function parseNumToNSystem(n) {
     $result.value = parseInt($result.value).toString(n)
 }
+
+function saveValue() {
+    localStorage.setItem(KEY_VALUE, $result.value)
+}
+
+function displaySavedValue(num) {
+    $result.value = Number(localStorage.getItem(KEY_VALUE)) + num
+}
+
+function displaySavedValueSumResult(num) {
+    $result.value = Number(localStorage.getItem(KEY_VALUE)) + $result.value * num
+}
+
+// function

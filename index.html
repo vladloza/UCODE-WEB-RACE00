@@ -16,13 +16,14 @@
         </div>
         <div class="button-box">
             <button class="buttons" id="clear" onclick="clean()">C</button>
-            <button class="buttons" onclick="">MC</button>
-            <button class="buttons" onclick="">MR</button>
-            <button class="buttons" onclick="">M+</button>
-            <button class="buttons" onclick="">M-</button>
-            <button class="buttons bigger" onclick="">binary</button>
-            <button class="buttons bigger" onclick="">dec</button>
-            <button class="buttons bigger" onclick="">hex</button>
+            <button class="buttons" onclick="saveValue()">MC</button>
+            <button class="buttons" onclick="displaySavedValue(0)">MR</button>
+            <button class="buttons" onclick="displaySavedValueSumResult(1)">M+</button>
+            <button class="buttons" onclick="displaySavedValueSumResult(-1)">M-</button>
+            <button class="buttons bigger" onclick="parseNumToNSystem(2)">binary</button>
+<!--            <button class="buttons bigger" onclick="">edex</button>-->
+            <button class="buttons bigger" onclick="parseNumToNSystem(10)">dec</button>
+            <button class="buttons bigger" onclick="parseNumToNSystem(16)">hex</button>
             <button class="buttons bigger operator" onclick="">√‎</button>
             <button class="buttons bigger operator" onclick="">x!</button>
             <button class="buttons bigger operator" onclick="">x<sup>n</sup></button>
