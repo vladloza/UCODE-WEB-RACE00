@@ -19,15 +19,19 @@ body {
 }
 .changeButtons {
     text-align: left;
+    width: 100%;
 }
 .change {
-    border-radius: 50px;
-    width: 70px;
+    border-radius: 20px;
+    width: 80px;
     height: 50px;
     background-color: crimson;
     border: none;
     color: white;
     outline: none;
+}
+.change:hover {
+    filter: brightness(1.2);
 }
 .button-box {
     height: auto;
@@ -71,6 +75,7 @@ body {
 .buttons:hover, .buttons-big:hover, .converters-buttons:hover {
     filter: brightness(70%);
 }
+
 .bigger {
     width: 170px;
 }
@@ -98,5 +103,11 @@ select {
 .equally {
     background-color:rgb(35, 161, 109);
     color: white;
+}
+.hex-letters {
+    width: 170px;
+}
+.inactive {
+    filter: brightness(0.7);
 }
 

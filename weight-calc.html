@@ -14,8 +14,10 @@
     <div class="header">
         <div class="changeButtons">
             <button class="change" onclick="document.location='index.html'">basic</button>
-            <button class="change" onclick="document.location='weight-calc.html'">weight</button>
+            <button class="change" onclick="document.location='len-calc.html'">len</button>
+            <button class="change inactive">weight</button>
             <button class="change" onclick="document.location='area-calc.html'">area</button>
+            <button class="change" onclick="document.location='num-sys.html'">numerical</button>
         </div>
         <div class="choose">
             <select id="selectFrom">
@@ -51,7 +53,7 @@
         <button class="converters-buttons" id="three" onclick="insert('3','result')">3</button>
         <button class="converters-buttons" id="two" onclick="insert('2','result')">2</button>
         <button class="converters-buttons" id="one" onclick="insert('1','result')">1</button>
-        <button class="converters-buttons equally" id="answer" onclick="answer()">=</button>
+        <button class="converters-buttons equally" id="answer" onclick="onConvert(mapWeigth,'selectFrom','selectTo','inputConvert','outputConvert')">=</button>
     </div>
 </div>
 <script src="js/script.js"></script>
