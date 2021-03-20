@@ -44,7 +44,7 @@ function operation(value) {
 function deegre(){
     let $result = document.getElementsByClassName("result")[0];
     $result.value+=' ^ ';
-    
+
 }
 function factorial(){
     let $result = document.getElementsByClassName("result")[0];
@@ -73,7 +73,7 @@ function clean() {
 function answer() {
     if($result.value!=="" && $history.value!==""){
     $history.value += $result.value;
-    
+
     let example=$history.value.split(' ');
     l(example);
     let x=example[example.length-1]===""?example[example.length-2]:example[example.length-1];
