@@ -44,12 +44,6 @@ function operation(value) {
     }
 }
 
-function deegre() {
-    let $result = document.getElementsByClassName("result")[0];
-    $result.value += ' ^ ';
-
-}
-
 function factorial() {
     let $result = document.getElementsByClassName("result")[0];
     let f = 1;
@@ -98,14 +92,9 @@ function answer() {
     }
 }
 
-function parseNumToNSystem(n) {
-    $result.value = parseInt($result.value).toString(n)
-}
-
 function saveValue() {
     localStorage.setItem(KEY_VALUE, $result.value)
 }
-
 function displaySavedValue(num) {
     $result.value = Number(localStorage.getItem(KEY_VALUE)) + num
 }
@@ -135,6 +124,7 @@ function l(s) {
 }
 
 const mapLenght = new Map()
+
 mapLenght.set("cm", "1")
     .set("m", "100")
     .set("km", "100000")
@@ -147,7 +137,6 @@ mapArea.set("square centimeters", "1")
     .set("square meter", "0.0001")
     .set("square kilometers", "0.0000000001")
     .set("hectares", "0.00000001")
-
 function convertToDef(map, value, key) {
     return value / map.get(key)
 }
@@ -156,13 +145,9 @@ function convertDefToValue(map, value, key) {
     return value * map.get(key)
 }
 
-// function convert(map, from, to, value) {
-//     return convertDefToValue(map, convertToDef(map, value, from), to)
-// }
 function convert(map, from, to, value) {
     return map.get(from) / map.get(to) * value
 }
-
 function onConvert(map, selectFrom, selectTo, inputConvert, outputConvert) {
     l(map)
     let from = document.getElementById(selectFrom).value;
@@ -172,4 +157,12 @@ function onConvert(map, selectFrom, selectTo, inputConvert, outputConvert) {
     output.value = convert(map, from, to, input.value)
 }
 
-l(convert(mapLenght, "kilometers", "meters", 1))
+function parseNumToNSystem(n) {
+    $result.value = parseInt($result.value).toString(n)
+}
+
+const fromNumeral = (number, type) => parseInt(number, type)
+
+const toNumeral = (number, type) => (number >>> 0).toString(type).toUpperCase()
+
+l(toNumeral('5',2).toString())
