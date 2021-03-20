@@ -135,9 +135,9 @@ function l(s) {
 }
 
 const mapLenght = new Map()
-mapLenght.set("centimeters", "1")
-    .set("meters", "100")
-    .set("kilometers", "100000")
+mapLenght.set("cm", "1")
+    .set("m", "100")
+    .set("km", "100000")
 const mapWeigth = new Map()
 mapWeigth.set("grams", "1")
     .set("kilograms", "1000")
@@ -156,9 +156,20 @@ function convertDefToValue(map, value, key) {
     return value * map.get(key)
 }
 
+// function convert(map, from, to, value) {
+//     return convertDefToValue(map, convertToDef(map, value, from), to)
+// }
 function convert(map, from, to, value) {
-    return convertDefToValue(map, convertToDef(map, value, from), to)
+    return map.get(from) / map.get(to) * value
+}
+
+function onConvert(map, selectFrom, selectTo, inputConvert, outputConvert) {
+    l(map)
+    let from = document.getElementById(selectFrom).value;
+    let to = document.getElementById(selectTo).value;
+    let input = document.getElementById(inputConvert)
+    let output = document.getElementById(outputConvert)
+    output.value = convert(map, from, to, input.value)
 }
 
 l(convert(mapLenght, "kilometers", "meters", 1))
-l(document.getElementById("select").value)

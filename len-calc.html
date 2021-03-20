@@ -18,20 +18,20 @@
             <button class="change" onclick="document.location='area-calc.html'">area</button>
         </div>
         <div class="choose">
-            <select id="select">
-                <option>c</option>
+            <select id="selectFrom">
+                <option>cm</option>
                 <option selected="selected">m</option>
                 <option>km</option>
             </select>
-            <input class="text-view out" type="text" placeholder="0.00" readonly>
+            <input id="inputConvert" class="text-view out result" type="text" placeholder="0.00" readonly>
         </div>
         <div class="choose">
-            <select>
-                <option>c</option>
+            <select id="selectTo">
+                <option>cm</option>
                 <option>m</option>
                 <option>km</option>
             </select>
-            <input class="text-view" type="text" placeholder="0.00" readonly>
+            <input id="outputConvert" class="text-view history" type="text" placeholder="0.00" readonly>
         </div>
     </div>
     <div class="button-box">
@@ -55,8 +55,10 @@
             <button class="buttons" id="three" onclick="insert('3','out')">3</button>
             <button id="zero" class="buttons" onclick="insert('0','out')">0</button>
             <button class="buttons" id="dot" onclick="insert('.')">.</button>
-            <button class="buttons-big" id="answer" onclick="answer()">=</button>
-            <button class="buttons" id="clear" onclick="clean()">C</button>
+            <button class="buttons-big" id="answer"
+                    onclick="onConvert(mapLenght,'selectFrom','selectTo','inputConvert','outputConvert')">=
+            </button>
+            <button class="buttons" id="clear" onclick="clean('result','history')">C</button>
         </table>
     </div>
 </div>
