@@ -24,8 +24,10 @@ function dot(output) {
 
 function sqrt() {
     let $result = document.getElementsByClassName("result")[0];
-    $result.value = Math.sqrt($result.value).toFixed(5);
-    $history.value = "";
+    if ($result.value > 0) {
+        $result.value = Math.sqrt($result.value).toFixed(5);
+        $history.value = "";
+    }
 }
 
 function operation(value) {
@@ -136,22 +138,13 @@ mapWeigth.set("g", "1")
 const mapArea = new Map()
 mapArea.set("square centimeters", "1")
     .set("square meter", "10000")
-    .set("square kilometers", "100000000")
+    .set("square kilometers", "10000000000")
     .set("hectares", "100000000")
 
-    const mapNum = new Map()
-    mapNum.set("binary", "2")
-        .set("decimal", "10")
-        .set("hexadecimal", "16")
-
-
-function convertToDef(map, value, key) {
-    return value / map.get(key)
-}
-
-function convertDefToValue(map, value, key) {
-    return value * map.get(key)
-}
+const mapNum = new Map()
+mapNum.set("binary", "2")
+    .set("decimal", "10")
+    .set("hexadecimal", "16")
 
 function convert(map, from, to, value) {
     return map.get(from) / map.get(to) * value
@@ -164,6 +157,17 @@ function onConvert(map, selectFrom, selectTo, inputConvert, outputConvert) {
     let input = document.getElementById(inputConvert)
     let output = document.getElementById(outputConvert)
     output.value = convert(map, from, to, input.value)
+}
+
+function onConvertNum(map, selectFrom, selectTo, inputConvert, outputConvert) {
+    l(map)
+    let from = document.getElementById(selectFrom);
+    let to = document.getElementById(selectTo);
+    let input = document.getElementById(inputConvert)
+    let output = document.getElementById(outputConvert)
+    l(from.value)
+    l(to.value)
+    output.value = toNumeral(fromNumeral(input.value, map.get(from.value)), map.get(to.value))
 }
 
 function parseNumToNSystem(n) {
@@ -179,22 +183,24 @@ l(toNumeral('5', 2).toString())
 
 function onSelect(input, output, type) {
     clean(input, output)
-    for (let el of document.getElementsByClassName("hex-")) {
-        el.style.display = "none"
+    const listDis = document.getElementsByClassName("converters-buttons")
+    for (let i = 0; i < listDis.length; i++) {
+        listDis[i].setAttribute("disabled", true);
     }
     let listEl
-    switch (type) {
-        case "bin":
+    switch (document.getElementById(type).value) {
+        case "binary":
             listEl = document.getElementsByClassName("bin")
             break
-        case "dec":
+        case "decimal":
             listEl = document.getElementsByClassName("dec")
             break
-        case "hex":
-            listEl = document.getElementsByClassName("hex")
+        case "hexadecimal":
+            listEl = document.getElementsByClassName("converters-buttons")
             break
     }
-    for (let el of listEl) {
-        el.style.display = "none"
+    l(listEl)
+    for (let i = 0; i < listEl.length; i++) {
+        listEl[i].removeAttribute("disabled");
     }
 }

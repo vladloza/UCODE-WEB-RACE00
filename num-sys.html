@@ -20,12 +20,12 @@
             <button class="change inactive">numerical</button>
         </div>
         <div class="choose">
-            <select id="selectFrom">
+            <select id="selectFrom" onchange="onSelect('input','output','selectFrom')">
                 <option>binary</option>
-                <option selected="selected">decimal</option>
-                <option>hexadecimal</option>
+                <option >decimal</option>
+                <option selected="selected">hexadecimal</option>
             </select>
-            <input id="inputConvert" class="text-view out result" type="text" placeholder="0.00" readonly>
+            <input id="inputConvert" class="text-view out result input" type="text" placeholder="0.00" readonly>
         </div>
         <div class="choose">
             <select id="selectTo">
@@ -33,7 +33,7 @@
                 <option>decimal</option>
                 <option>hexadecimal</option>
             </select>
-            <input id="outputConvert" class="text-view history" type="text" placeholder="0.00" readonly>
+            <input id="outputConvert" class="text-view history output" type="text" placeholder="0.00" readonly>
         </div>
     </div>
     <div class="button-box">
@@ -48,18 +48,18 @@
         <button class="converters-buttons hex-letters" onclick="insert('D','result')">D</button>
         <button class="converters-buttons hex-letters" onclick="insert('E','result')">E</button>
         <button class="converters-buttons hex-letters" onclick="insert('F','result')">F</button>
-        <button class="converters-buttons" id="nine" onclick="insert('9','result')">9</button>
-        <button class="converters-buttons" id="eigth" onclick="insert('8','result')">8</button>
-        <button class="converters-buttons" id="seven" onclick="insert('7','result')">7</button>
-        <button id="zero" class="converters-buttons" onclick="insert('0','result')">0</button>
-        <button class="converters-buttons" id="six" onclick="insert('6','result')">6</button>
-        <button class="converters-buttons" id="five" onclick="insert('5','result')">5</button>
-        <button class="converters-buttons" id="four" onclick="insert('4','result')">4</button>
-        <button class="converters-buttons" id="dot" onclick="dot('result')">.</button>
-        <button class="converters-buttons" id="three" onclick="insert('3','result')">3</button>
-        <button class="converters-buttons" id="two" onclick="insert('2','result')">2</button>
-        <button class="converters-buttons" id="one" onclick="insert('1','result')">1</button>
-        <button class="converters-buttons equally" id="answer" onclick="onConvert(mapLenght,'selectFrom','selectTo','inputConvert','outputConvert')">=</button>
+        <button class="converters-buttons dec" id="nine" onclick="insert('9','result')">9</button>
+        <button class="converters-buttons dec" id="eigth" onclick="insert('8','result')">8</button>
+        <button class="converters-buttons dec" id="seven" onclick="insert('7','result')">7</button>
+        <button id="zero" class="converters-buttons bin dec" onclick="insert('0','result')">0</button>
+        <button class="converters-buttons dec" id="six" onclick="insert('6','result')">6</button>
+        <button class="converters-buttons dec" id="five" onclick="insert('5','result')">5</button>
+        <button class="converters-buttons dec" id="four" onclick="insert('4','result')">4</button>
+        <button class="converters-buttons" id="dot" disabled onclick="dot('result')">.</button>
+        <button class="converters-buttons dec" id="three" onclick="insert('3','result')">3</button>
+        <button class="converters-buttons dec" id="two" onclick="insert('2','result')">2</button>
+        <button class="converters-buttons bin dec" id="one" onclick="insert('1','result')">1</button>
+        <button class="converters-buttons equally bin dec" id="answer" onclick="onConvertNum(mapNum,'selectFrom','selectTo','inputConvert','outputConvert')">=</button>
     </div>
 </div>
 <script src="js/script.js"></script>
