@@ -14,24 +14,24 @@
     <div class="header">
         <div class="changeButtons">
             <button class="change" onclick="document.location='index.html'">basic</button>
-            <button class="change inactive">len</button>
+            <button class="change" onclick="document.location='len-calc.html'">len</button>
             <button class="change" onclick="document.location='weight-calc.html'">weight</button>
             <button class="change" onclick="document.location='area-calc.html'">area</button>
-            <button class="change" onclick="document.location='num-sys.html'">numerical</button>
+            <button class="change inactive">numerical</button>
         </div>
         <div class="choose">
             <select id="selectFrom">
-                <option>cm</option>
-                <option selected="selected">m</option>
-                <option>km</option>
+                <option>binary</option>
+                <option selected="selected">decimal</option>
+                <option>hexadecimal</option>
             </select>
             <input id="inputConvert" class="text-view out result" type="text" placeholder="0.00" readonly>
         </div>
         <div class="choose">
             <select id="selectTo">
-                <option>cm</option>
-                <option>m</option>
-                <option>km</option>
+                <option>binary</option>
+                <option>decimal</option>
+                <option>hexadecimal</option>
             </select>
             <input id="outputConvert" class="text-view history" type="text" placeholder="0.00" readonly>
         </div>
@@ -42,6 +42,12 @@
         <button class="buttons" onclick="displaySavedValue(0)">MR</button>
         <button class="buttons" onclick="displaySavedValueSumResult(1)">M+</button>
         <button class="buttons" onclick="displaySavedValueSumResult(-1)">M-</button>
+        <button class="converters-buttons hex-letters" onclick="insert('A','result')">A</button>
+        <button class="converters-buttons hex-letters" onclick="insert('B','result')">B</button>
+        <button class="converters-buttons hex-letters" onclick="insert('C','result')">C</button>
+        <button class="converters-buttons hex-letters" onclick="insert('D','result')">D</button>
+        <button class="converters-buttons hex-letters" onclick="insert('E','result')">E</button>
+        <button class="converters-buttons hex-letters" onclick="insert('F','result')">F</button>
         <button class="converters-buttons" id="nine" onclick="insert('9','result')">9</button>
         <button class="converters-buttons" id="eigth" onclick="insert('8','result')">8</button>
         <button class="converters-buttons" id="seven" onclick="insert('7','result')">7</button>

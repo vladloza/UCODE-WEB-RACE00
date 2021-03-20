@@ -130,14 +130,20 @@ mapLenght.set("cm", "1")
     .set("m", "100")
     .set("km", "100000")
 const mapWeigth = new Map()
-mapWeigth.set("grams", "1")
-    .set("kilograms", "1000")
-    .set("tonnes", "1000000")
+mapWeigth.set("g", "1")
+    .set("kg", "1000")
+    .set("ton", "1000000")
 const mapArea = new Map()
 mapArea.set("square centimeters", "1")
     .set("square meter", "10000")
     .set("square kilometers", "100000000")
     .set("hectares", "100000000")
+
+    const mapNum = new Map()
+    mapNum.set("binary", "2")
+        .set("decimal", "10")
+        .set("hexadecimal", "16")
+
 
 function convertToDef(map, value, key) {
     return value / map.get(key)
