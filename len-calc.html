@@ -19,7 +19,7 @@
             </div>
             <div class="choose">
                 <select>
-                    <option>c</option>
+                    <option>cm</option>
                     <option>m</option>
                     <option>km</option>
                 </select>
@@ -27,32 +27,38 @@
             </div>
             <div class="choose">
                 <select>
-                    <option>c</option>
+                    <option>cm</option>
                     <option>m</option>
                     <option>km</option>
                 </select>
                 <input class="text-view" type="text" value="0.00" readonly>
             </div>
         </div>
-        <div class="button-box">
-            <table>
+
+        <table>
             <tr>
                 <td><button class="buttons" id="seven" onclick="insert('7')">7</button></td>
-            <td><button class="buttons" id="eigth" onclick="insert('8')">8</button></td>
-            <td><button class="buttons" id="nine" onclick="insert('9')">9</button></td>
-        </tr>
-            <button class="buttons" id="four" onclick="insert('4')">4</button>
-            <button class="buttons" id="five" onclick="insert('5')">5</button>
-            <button class="buttons" id="six" onclick="insert('6')">6</button>
-            <button class="buttons" id="one" onclick="insert('1')">1</button>
-            <button class="buttons" id="two" onclick="insert('2')">2</button>
-            <button class="buttons" id="three" onclick="insert('3')">3</button>
-            <button id="zero" class="buttons" onclick="insert('0')">0</button>
-            <button class="buttons" id="dot" onclick="insert('.')">.</button>
-            <button class="buttons-big" id="answer" onclick="answer()">=</button>
-            <button class="buttons" id="clear" onclick="clean()">C</button>
+                <td><button class="buttons" id="eigth" onclick="insert('8')">8</button></td>
+                <td><button class="buttons" id="nine" onclick="insert('9')">9</button></td>
+                <td rowspan="2"><button class="buttons" id="clear" onclick="clean()">C</button></td>
+            </tr>
+            <tr>
+                <td><button class="buttons" id="four" onclick="insert('4')">4</button></td>
+                <td><button class="buttons" id="five" onclick="insert('5')">5</button></td>
+                <td><button class="buttons" id="six" onclick="insert('6')">6</button></td>
+            </tr>
+            <tr>
+                <td><button class="buttons" id="one" onclick="insert('1')">1</button></td>
+                <td><button class="buttons" id="two" onclick="insert('2')">2</button></td>
+                <td><button class="buttons" id="three" onclick="insert('3')">3</button></td>
+                <td rowspan="2"><button class="buttons-big" id="answer" onclick="answer()">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="zero" class="buttons" onclick="insert('0')">0</button></td>
+                <td><button class="buttons" id="dot" onclick="insert('.')">.</button></td>
+            </tr>
+
         </table>
-        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
