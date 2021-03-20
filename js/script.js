@@ -95,6 +95,7 @@ function answer() {
 function saveValue() {
     localStorage.setItem(KEY_VALUE, $result.value)
 }
+
 function displaySavedValue(num) {
     $result.value = Number(localStorage.getItem(KEY_VALUE)) + num
 }
@@ -134,9 +135,10 @@ mapWeigth.set("grams", "1")
     .set("tonnes", "1000000")
 const mapArea = new Map()
 mapArea.set("square centimeters", "1")
-    .set("square meter", "0.0001")
-    .set("square kilometers", "0.0000000001")
-    .set("hectares", "0.00000001")
+    .set("square meter", "10000")
+    .set("square kilometers", "100000000")
+    .set("hectares", "100000000")
+
 function convertToDef(map, value, key) {
     return value / map.get(key)
 }
@@ -148,6 +150,7 @@ function convertDefToValue(map, value, key) {
 function convert(map, from, to, value) {
     return map.get(from) / map.get(to) * value
 }
+
 function onConvert(map, selectFrom, selectTo, inputConvert, outputConvert) {
     l(map)
     let from = document.getElementById(selectFrom).value;
@@ -165,4 +168,27 @@ const fromNumeral = (number, type) => parseInt(number, type)
 
 const toNumeral = (number, type) => (number >>> 0).toString(type).toUpperCase()
 
-l(toNumeral('5',2).toString())
+l(toNumeral('5', 2).toString())
+
+
+function onSelect(input, output, type) {
+    clean(input, output)
+    for (let el of document.getElementsByClassName("hex-")) {
+        el.style.display = "none"
+    }
+    let listEl
+    switch (type) {
+        case "bin":
+            listEl = document.getElementsByClassName("bin")
+            break
+        case "dec":
+            listEl = document.getElementsByClassName("dec")
+            break
+        case "hex":
+            listEl = document.getElementsByClassName("hex")
+            break
+    }
+    for (let el of listEl) {
+        el.style.display = "none"
+    }
+}
