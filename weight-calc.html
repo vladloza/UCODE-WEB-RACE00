@@ -10,39 +10,51 @@
 </head>
 
 <body>
-    <div class="calculator">
-        <div class="header">
-            <div class="changeButtons">
-                <button class="change" onclick="document.location='index.html'">basic</button>
-                <button class="change" onclick="document.location='len-calc.html'">len</button>
-                <button class="change" onclick="document.location='area-calc.html'">area</button>
-            </div>
-            <input class="history" type="text" value="0.00" readonly>
-            <input class="result" type="text" value="0.00" readonly>
+<div class="calculator">
+    <div class="header">
+        <div class="changeButtons">
+            <button class="change" onclick="document.location='index.html'">basic</button>
+            <button class="change" onclick="document.location='weight-calc.html'">weight</button>
+            <button class="change" onclick="document.location='area-calc.html'">area</button>
         </div>
-        <div class="button-box">
-            <button class="buttons" id="clear" onclick="clean()">C</button>
-            <button class="buttons" id="seven" onclick="insert('7')">7</button>
-            <button class="buttons" id="eigth" onclick="insert('8')">8</button>
-            <button class="buttons" id="nine" onclick="insert('9')">9</button>
-            <button class="buttons operator" id="plus_and_minus" onclick="plus_and_min()">+/-</button>
-            <button class="buttons operator" id="percent" onclick="percent()">%</button>
-            <button class="buttons" id="four" onclick="insert('4')">4</button>
-            <button class="buttons" id="five" onclick="insert('5')">5</button>
-            <button class="buttons" id="six" onclick="insert('6')">6</button>
-            <button class="buttons operator" id="plus" onclick="operation('+')">+</button>
-            <button class="buttons operator" id="mul" onclick="operation('*')">*</button>
-            <button class="buttons" id="one" onclick="insert('1')">1</button>
-            <button class="buttons" id="two" onclick="insert('2')">2</button>
-            <button class="buttons" id="three" onclick="insert('3')">3</button>
-            <button class="buttons operator" id="div" onclick="operation('÷')">÷</button>
-            <button class="buttons operator" id="minus" onclick="operation('-')">-</button>
-            <button id="zero" class="buttons" onclick="insert('0')">0</button>
-            <button class="buttons" id="dot" onclick="insert('.')">.</button>
-            <button class="buttons-big" id="answer" onclick="answer()">=</button>
+        <div class="choose">
+            <select id="selectFrom">
+                <option>g</option>
+                <option selected="selected">kg</option>
+                <option>ton</option>
+            </select>
+            <input id="inputConvert" class="text-view out result" type="text" placeholder="0.00" readonly>
+        </div>
+        <div class="choose">
+            <select id="selectTo">
+                <option>g</option>
+                <option>kg</option>
+                <option>ton</option>
+            </select>
+            <input id="outputConvert" class="text-view history" type="text" placeholder="0.00" readonly>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    <div class="button-box">
+        <button class="buttons" id="clear" onclick="clean('result','history')">C</button>
+        <button class="buttons" onclick="saveValue()">MC</button>
+        <button class="buttons" onclick="displaySavedValue(0)">MR</button>
+        <button class="buttons" onclick="displaySavedValueSumResult(1)">M+</button>
+        <button class="buttons" onclick="displaySavedValueSumResult(-1)">M-</button>
+        <button class="converters-buttons" id="nine" onclick="insert('9','result')">9</button>
+        <button class="converters-buttons" id="eigth" onclick="insert('8','result')">8</button>
+        <button class="converters-buttons" id="seven" onclick="insert('7','result')">7</button>
+        <button id="zero" class="converters-buttons" onclick="insert('0','result')">0</button>
+        <button class="converters-buttons" id="six" onclick="insert('6','result')">6</button>
+        <button class="converters-buttons" id="five" onclick="insert('5','result')">5</button>
+        <button class="converters-buttons" id="four" onclick="insert('4','result')">4</button>
+        <button class="converters-buttons" id="dot" onclick="dot('result')">.</button>
+        <button class="converters-buttons" id="three" onclick="insert('3','result')">3</button>
+        <button class="converters-buttons" id="two" onclick="insert('2','result')">2</button>
+        <button class="converters-buttons" id="one" onclick="insert('1','result')">1</button>
+        <button class="converters-buttons equally" id="answer" onclick="answer()">=</button>
+    </div>
+</div>
+<script src="js/script.js"></script>
 </body>
 
 </html>
